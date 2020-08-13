@@ -1,1 +1,1 @@
-Repo to save all coding interview questions I've attempted
+Repo to save all coding questions I've attempted in job interviews
