@@ -46,16 +46,33 @@ def directionalView(root, direction):
 
         queue.pop(0)
 
-root = Node(50)
-root.left = Node(21)
-root.right = Node(37)
-root.left.right = Node(11)
-root.left.left = Node(66)
-root.right.left = Node(99)
-root.right.right= Node(1)
-root.right.left.right = Node(16)
-root.right.left.right.left = Node(45)
-root.right.left.right.right = Node(9)
+def levelView(root):
+    if root is None:
+        return
 
-direction = str(input("Please enter the side of the tree you wish to see: "))
-directionalView(root, direction)
+    queue = []
+
+    queue.append(root)
+
+    while(len(queue) > 0):
+        node = queue[0]
+        queue.pop(0)
+        print (node.data)
+
+        if node.left is not None:
+            queue.append(node.left)
+
+        if node.right is not None:
+            queue.append(node.right)
+
+root = Node(1)
+root.left = Node(2)
+root.right = Node(3)
+root.left.left = Node(4)
+root.left.right = Node(5)
+root.right.left = Node(6)
+root.right.right = Node(7)
+
+#direction = str(input("Please enter the side of the tree you wish to see: "))
+#directionalView(root, direction)
+levelView(root)
