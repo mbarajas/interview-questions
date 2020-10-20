@@ -18,7 +18,6 @@ class Deck:
         for card in self.cards:
             print(card)
 
-
     def draw(self):
         print(self.cards[0])
         self.cards.pop(0)
